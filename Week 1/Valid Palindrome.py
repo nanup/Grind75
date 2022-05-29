@@ -22,6 +22,42 @@ class Solution(object):
             else:
                 return False
         return True
+
+# second try
+class Solution(object):
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        s = Solution().alterString(s)
+        print(s)
+        return Solution().isPalindromeA(s)
         
-s = "9,8"
+        
+    
+    def alterString(self, aString):
+        alteredString = []
+        
+        for ch in aString:
+            if ch.isalnum():
+                alteredString.append(ch.lower())
+            
+        return "".join(alteredString)
+    
+    def isPalindromeA(self, aString):
+        i = 0
+        j = len(aString) - i - 1
+        
+        while i <= j:
+            j = len(aString) - i - 1
+            
+            if aString[i] != aString[j]:
+                return False
+            
+            i += 1
+            
+        return True
+        
+s = "race a car"
 print(Solution().isPalindrome(s))

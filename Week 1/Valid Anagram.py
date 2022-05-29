@@ -18,10 +18,8 @@ class Solution(object):
     def dictionarise(self, aString):
         dict = {}
         for ch in aString:
-            print(ch)
             if ch in dict:
                 dict[ch] += 1
-                print(dict)
             else:
                 dict[ch] = 1
         return dict
